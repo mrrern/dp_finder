@@ -40,7 +40,8 @@ class _AuthorsPageState extends State<AuthorsPage> {
       final newResults = await _wikidataService.fetchAuthorData(_offset);
       setState(() {
         _results.addAll(newResults);
-        _filteredResults = _results; // Inicialmente, todos los resultados están filtrados
+        _filteredResults =
+            _results; // Inicialmente, todos los resultados están filtrados
         _offset += newResults.length;
       });
     } catch (e) {
@@ -78,7 +79,14 @@ class _AuthorsPageState extends State<AuthorsPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('DP Finder'),
+        title: SizedBox(
+          height: MediaQuery.of(context).size.height * 0.081,
+          width: MediaQuery.of(context).size.width * 0.07,
+          child: Image.asset(
+            'assets/logo.png',
+            fit: BoxFit.fill,
+          ),
+        ),
         centerTitle: true,
         actions: [
           PopupMenuButton<Country>(
