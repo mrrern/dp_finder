@@ -28,6 +28,6 @@ jobs:
       run: flutter build web --release --web-renderer html 
       
     - name: Deploy
-      uses: peaceiris/actions-dp-pages@v3
+      uses: peaceiris/dp-pages@v3
       with:
         publish_dir: ./build/web
